@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<div>
+		<div>
+			<iframe width="350" height="350"
+				src="https://www.youtube.com/embed/-Ou5Vz-ZRaE" frameborder="0"
+				allowfullscreen></iframe>
+		</div>
+		<div>
+				<h2>
+				Push on my local led matrix
+				</h2>
+				<p>This a demo of MQTT using mqttcloud.com you can push on my
+					local LED matrix a message</p>
+				<form>
+					<input id="message" type="text" value="" /> 
+					<input type="button" value="send" onclick="push()" />
+				</form>
+				<script>
+					function push() {
+						$.get("http://40.85.103.243:7898/greeting?text=" + $("#message").val(), function(data) {
+							alert("Data Loaded: " + data);
+						});
+					}
+				</script>
+		</div>
+	</div>
+
+</body>
+</html>
